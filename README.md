@@ -189,4 +189,4 @@ Make sure `cleanup.sh` runs after planning. It removes pulled tasks from `inbox.
 
 ## Licence
 
-MIT
+[0BSD](https://opensource.org/licenses/0BSD) — zero conditions. Use it, fork it, sell it, whatever.
