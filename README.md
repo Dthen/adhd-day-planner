@@ -12,7 +12,7 @@ Drop tasks into an `inbox.md`, run one command, and get a warm, coaching-voiced 
 inbox.md ──▶ prepare.sh ──▶ LLM generates plan ──▶ cleanup.sh
                                     │
                                     ▼
-                          ~/notes/daily/YYYY-MM-DD.md
+                          ~/notes/to-do/YYYY-MM-DD.md
 ```
 
 ### 1. Prepare (`prepare.sh`)
@@ -65,7 +65,7 @@ Set these environment variables (or accept the defaults):
 |----------|---------|-------------|
 | `VAULT_PATH` | `$HOME/notes` | Path to your Obsidian vault |
 | `INBOX_FILE` | `$VAULT_PATH/inbox.md` | Your task capture file |
-| `DAILY_FOLDER` | `$VAULT_PATH/daily` | Where daily plans are written |
+| `DAILY_FOLDER` | `$VAULT_PATH/to-do` | Where daily plans are written |
 | `LOCATION` | `55.4586,-4.6292` | `lat,lon` for weather (default: Ayr, Scotland) |
 
 Copy `scripts/context.md.example` to `scripts/context.md` and fill in your habits, goals, and constraints.

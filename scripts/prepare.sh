@@ -8,7 +8,7 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 VAULT_PATH="${VAULT_PATH:-$HOME/notes}"
 INBOX_FILE="${INBOX_FILE:-$VAULT_PATH/inbox.md}"
 CONTEXT_FILE="${CONTEXT_FILE:-$SCRIPT_DIR/context.md}"
-DAILY_FOLDER="${DAILY_FOLDER:-$VAULT_PATH/daily}"
+DAILY_FOLDER="${DAILY_FOLDER:-$VAULT_PATH/to-do}"
 
 # Location for weather (default: Ayr, Scotland)
 LOCATION="${LOCATION:-55.4586,-4.6292}"

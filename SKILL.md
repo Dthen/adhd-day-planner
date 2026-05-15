@@ -36,7 +36,7 @@ Creates daily note skeleton with icebox at bottom.
 The script uses these environment variables:
 - `VAULT_PATH` — path to Obsidian vault (default: `$HOME/notes`)
 - `INBOX_FILE` — path to inbox.md (default: `$VAULT_PATH/inbox.md`)
-- `DAILY_FOLDER` — daily notes folder (default: `$VAULT_PATH/daily`)
+- `DAILY_FOLDER` — daily notes folder (default: `$VAULT_PATH/to-do`)
 - `LOCATION` — lat,lon for weather (default: 55.4586,-4.6292)
 
 ### Phase 2: Interactive Clarification
@@ -268,7 +268,7 @@ Task is "vague" if:
 - Script dir: `~/.hermes/skills/productivity/adhd-day-planner/scripts/`
 - Context: `~/.hermes/skills/productivity/adhd-day-planner/scripts/context.md` *(user-configurable)*
 - Inbox: `~/notes/inbox.md` *(user's Obsidian vault)*
-- Output: `~/notes/daily/YYYY-MM-DD.md` *(user's Obsidian vault)*
+- Output: `~/notes/to-do/YYYY-MM-DD.md` *(user's Obsidian vault)*
 - Icebox: Pre-populated in daily note skeleton by prepare.sh — contains yesterday's deferred tasks
 
 ## ⚠️ Common Failure Modes (lessons learned)
@@ -276,6 +276,9 @@ Task is "vague" if:
 1. **DO NOT view inbox.md directly** — use prepare.sh's JSON output only
 2. **Icebox is future work** — yesterday's deferred passed to prompt as today's task pool
 3. **Recurrence NLP is mandatory** — "every 2 days" → add `🔁 every 2 days` tag
+4. **Do NOT commit changes without explicit user consent.** The user may be reviewing diffs or have private config. Stage if needed, push only when explicitly asked.
+5. **"Our repo" means THIS skill's directory first.** When user refers to "the day planner repo" or "our project", check the local git repo under `~/.hermes/skills/productivity/adhd-day-planner/` before searching GitHub.
+6. **Do NOT modify Obsidian vault config files (`.obsidian/`)** as part of this skill. If asked about daily note auto-generation, explain the relevant setting but do not patch `app.json` or `daily-notes.json` without explicit user approval.
 
 See Workflow Adherence section for: writing directly to note, not chatting the plan first.
 
@@ -309,7 +312,7 @@ curl -s "https://api.open-meteo.com/v1/forecast?latitude=55.4586&longitude=-4.62
 ## Workflow Adherence
 
 ### CRITICAL: Write the note, don't ask
-Skill explicitly says to write to `$VAULT/daily/YYYY-MM-DD.md`. Do **not** ask "want me to write this?" — this breaks the user's flow and adds friction they explicitly set up the system to avoid.
+Skill explicitly says to write to `$VAULT/to-do/YYYY-MM-DD.md`. Do **not** ask "want me to write this?" — this breaks the user's flow and adds friction they explicitly set up the system to avoid.
 
 When user says "make a plan" or "plan my day":
 1. Run prepare.sh
