@@ -10,7 +10,7 @@ Daily planning pipeline: shell scripts gather tasks and context → LLM generate
 inbox.md ──▶ prepare.sh ──▶ LLM generates plan ──▶ cleanup.sh
                                     │
                                     ▼
-                          ~/notes/to-do/YYYY-MM-DD.md
+                          ~/notes/daily/YYYY-MM-DD.md
 ```
 
 1. **prepare.sh** gathers tasks, fetches weather, reads context, outputs JSON + writes a skeleton note with icebox.
@@ -28,7 +28,7 @@ inbox.md ──▶ prepare.sh ──▶ LLM generates plan ──▶ cleanup.sh
 | `scripts/context.md` | Your habits, goals, energy patterns (user-editable) |
 | `SKILL.md` | Full generation rules for the LLM |
 | `~/notes/inbox.md` | Task capture file |
-| `~/notes/to-do/YYYY-MM-DD.md` | Daily plan output |
+| `~/notes/daily/YYYY-MM-DD.md` | Daily plan output |
 
 ---
 
@@ -38,7 +38,7 @@ inbox.md ──▶ prepare.sh ──▶ LLM generates plan ──▶ cleanup.sh
 |----------|---------|-------------|
 | `VAULT_PATH` | `$HOME/notes` | Path to Obsidian vault |
 | `INBOX_FILE` | `$VAULT_PATH/inbox.md` | Task capture file |
-| `DAILY_FOLDER` | `$VAULT_PATH/to-do` | Where plans are written |
+| `DAILY_FOLDER` | `$VAULT_PATH/daily` | Where plans are written |
 | `LOCATION` | `55.4586,-4.6292` | `lat,lon` for weather |
 | `CONTEXT_FILE` | `scripts/context.md` | Personal context |
 
